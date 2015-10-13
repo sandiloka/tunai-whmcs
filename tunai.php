@@ -1,8 +1,8 @@
 <?php
 
-require realpath(__DIR__ . DIRECTORY_SEPARATOR .'tunai/Tunai.php');
+require realpath(__DIR__ . DIRECTORY_SEPARATOR .'tunai/vendor/autoload.php');
 
-use Sandiloka\tunai\Invoice;
+use Sandiloka\Tunai\Invoice;
 
 function tunai_config()
 {
@@ -20,6 +20,7 @@ function tunai_config()
 
 function tunai_link($params)
 {
+
     # Gateway Specific Variables
     $merchantid = $params['merchantid'];
     $accesskey  = $params['accesskey'];

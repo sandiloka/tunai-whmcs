@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
-    'Sandiloka\\Tunai\\' => array($baseDir . '/src'),
+    'Sandiloka\\Tunai\\' => array($vendorDir . '/sandiloka/tunai/src'),
 );

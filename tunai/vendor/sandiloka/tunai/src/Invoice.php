@@ -41,7 +41,7 @@ class Invoice
      */
     public function __construct($key, $secret, $rootUrl = self::TUNAI_URL)
     {
-        $this->key = base64_encode('api:' . $key . ':' . $secret);
+        $this->key = $key;
         $this->secret = $secret;
         $this->rootUrl = $rootUrl;
 

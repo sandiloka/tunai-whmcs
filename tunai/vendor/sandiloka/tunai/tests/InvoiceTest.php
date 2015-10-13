@@ -11,7 +11,7 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     {
         $key = getenv('TUNAI_APP_KEY');
         $secret = getenv('TUNAI_APP_SEC');
-        $invoice = new Invoice($key, $secret);
+        $invoice = new Invoice($key, $secret, getenv('TUNAI_ROOT_URL'));
 
         // Generate current invoice refId
         $currentInvoiceRefId = (string) time();
@@ -63,7 +63,7 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     {
         $key = getenv('TUNAI_APP_KEY');
         $secret = getenv('TUNAI_APP_SEC');
-        $invoice = new Invoice($key, $secret);
+        $invoice = new Invoice($key, $secret, getenv('TUNAI_ROOT_URL'));
         $currentInvoiceId = $ret['currentInvoiceId'];
         $res = $invoice->getById($currentInvoiceId);
         $this->assertEquals($res->getStatusCode(), 200);
@@ -76,7 +76,7 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     {
         $key = getenv('TUNAI_APP_KEY');
         $secret = getenv('TUNAI_APP_SEC');
-        $invoice = new Invoice($key, $secret);
+        $invoice = new Invoice($key, $secret, getenv('TUNAI_ROOT_URL'));
         $currentInvoiceRefId = $ret['currentInvoiceRefId'];
         $res = $invoice->getByRef($currentInvoiceRefId);
         $this->assertEquals($res->getStatusCode(), 200);
@@ -89,7 +89,7 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     {
         $key = getenv('TUNAI_APP_KEY');
         $secret = getenv('TUNAI_APP_SEC');
-        $invoice = new Invoice($key, $secret);
+        $invoice = new Invoice($key, $secret, getenv('TUNAI_ROOT_URL'));
         $currentInvoiceData = $ret['currentInvoiceData'];
         $res = $invoice->getByRefOrCreate($currentInvoiceData);
         $this->assertEquals($res->getStatusCode(), 200);
@@ -102,7 +102,7 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
     {
         $key = getenv('TUNAI_APP_KEY');
         $secret = getenv('TUNAI_APP_SEC');
-        $invoice = new Invoice($key, $secret);
+        $invoice = new Invoice($key, $secret, getenv('TUNAI_ROOT_URL'));
         $currentInvoiceData = $ret['currentInvoiceData'];
         $currentInvoiceData['refId'] = (string) time();
         $res = $invoice->getByRefOrCreate($currentInvoiceData);

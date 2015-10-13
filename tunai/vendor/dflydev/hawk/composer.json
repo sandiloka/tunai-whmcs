@@ -1,0 +1,29 @@
+{
+    "name": "dflydev/hawk",
+    "description": "Hawk",
+    "keywords": ["hawk", "authentication", "bewit"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragonfly Development Inc.",
+            "email": "info@dflydev.com",
+            "homepage": "http://dflydev.com"
+        },
+        {
+            "name": "Beau Simensen",
+            "email": "beau@dflydev.com",
+            "homepage": "http://beausimensen.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Dflydev\\Hawk": "src"
+        }
+    },
+    "require": {
+        "ircmaxell/random-lib": "1.0.*@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.21"
+    }
+}

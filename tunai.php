@@ -84,9 +84,9 @@ function tunai_link($params)
 
             $itemid++;
             $data = array(
-                'id' => strval($itemid),
+                'itemId' => strval($itemid),
                 'price' => $invoiceitem['amount'],
-                'qty' => 1,
+                'quantity' => 1,
                 'description' => $itemdescription
             );
             $item_details[] = $data;
@@ -98,9 +98,9 @@ function tunai_link($params)
         {
             $itemid++;
             $data = array(
-                'id' => strval($itemid),
+                'itemId' => strval($itemid),
                 'price' => $tax,
-                'qty' => 1,
+                'quantity' => 1,
                 'description' => 'Pajak'
             );
             $item_details[] = $data;
@@ -112,9 +112,9 @@ function tunai_link($params)
         {
             $itemid++;
             $data = array(
-                'id' => strval($itemid),
+                'itemId' => strval($itemid),
                 'price' => $credit * (-1),
-                'qty' => 1,
+                'quantity' => 1,
                 'description' => 'Saldo'
             );
             $item_details[] = $data;
